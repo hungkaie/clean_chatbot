@@ -129,7 +129,6 @@ class ChatBot:
     ):
         if role == "user":
             log_message = f"{role}: {message}"
-            print(log_message)
             self.log.append(log_message)
 
             message = [{"role": role, "content": message}]
