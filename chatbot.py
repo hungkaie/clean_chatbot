@@ -9,7 +9,7 @@ from default import ChatBotDefault
 class ChatBot:
     def __init__(
         self,
-        name: str = ChatBotDefault().name,
+        name: str = "金毛",
         api_key: str = ChatBotDefault().api_key,
         system_prompt: str = ChatBotDefault().system_prompt[0],
         payload: dict = ChatBotDefault().payload,
@@ -17,7 +17,8 @@ class ChatBot:
         super(ChatBot, self).__init__()
         self.name = name
         self.api_key = api_key
-        self.system_message = {"role": "system", "content": system_prompt.format(name=name)}
+        system_prompt = f"你的名字是 {name}\n" + system_prompt
+        self.system_message = {"role": "system", "content": system_prompt}
         self.payload = payload
 
         self.headers = {
