@@ -1,23 +1,42 @@
 # clean_chatbot
 A simple clean chatbot with ChatGPT
 
-
-## Usage
-1. Modify `api_key` in `ChatBotDefault` in `default.py` properly.
-2. Create and source to you virtual environment
+## Installation
+1. Create and source to you virtual environment
     ```
     virtualenv env
     source env/bin/activate
     ```
-3. Install requirements: `pip install -r requirements.txt`
-4. Run the main scipy: `python -m main`
-5. Start to chat!
+2. Install requirements: `pip install -r requirements.txt`
+
+## Usage
+1. Modify `api_key` in `ChatBotDefault` in `default.py` properly.
+2. Run the main scipy: `python -m main`
+3. Start to chat!
 
 I also printed the message in the main chat function `ChatBot.chat` in `chatbot.py`, you can modify this as you may not want to see the message printed twice.
 
-## Example of user imput
-```bash
-搜尋今日台北、台中、高雄的最高溫幾攝氏幾度，然後寫入成 天氣.txt 檔案
+## Example
+```
+user: 搜尋今日台北、台中、高雄的最高溫幾攝氏幾度，然後寫入成 天氣.csv 檔案
+ChatGPT(金毛): None
+ChatGPT(金毛) call google_search with {'keyword': '台北今日最高溫攝氏度'}
+ChatGPT(金毛) call google_search with {'keyword': '台中今日最高溫攝氏度'}
+ChatGPT(金毛) call google_search with {'keyword': '高雄今日最高溫攝氏度'}
+ChatGPT(金毛): None
+ChatGPT(金毛) call write_file with {'filepath': '天氣.csv', 'content': '城市,最高溫度(攝氏度)\n台北,19.4\n台中,20.6\n高雄,20.6\n'}
+確定寫入檔案 天氣.csv? (y/n) y
+ChatGPT(金毛): 已成功搜尋到今日台北、台中、高雄的最高溫度，並將資料寫入了名為「天氣.csv」的檔案中。
+user: 讀取 天氣.csv 並告訴我內容
+ChatGPT(金毛): None
+ChatGPT(金毛) call read_file with {'filepath': '天氣.csv'}
+ChatGPT(金毛): 以下是從「天氣.csv」檔案中讀取到的內容：
+
+|    | 城市   |   最高溫度(攝氏度) |
+|---:|:-------|-------------------:|
+|  0 | 台北   |               19.4 |
+|  1 | 台中   |               20.6 |
+|  2 | 高雄   |               20.6 |
 ```
 
 ## Settings
