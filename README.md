@@ -39,6 +39,14 @@ ChatGPT(金毛): 以下是從「天氣.csv」檔案中讀取到的內容：
 |  2 | 高雄   |               20.6 |
 ```
 
+## In Python
+```python=
+>>> from chatbot import ChatBot
+>>> ai = ChatBot(name='阿金')
+>>> ai.chat('Tell a joke', temperature=0.8, tool_choice="none") # Raise the `temperature` to get more creative answers, use `tool_choice="none"` to avoid function calling.
+ChatGPT(阿金): Why couldn't the bicycle find its way home? Because it lost its bearings! 😄
+```
+
 ## Settings
 All settings can be found in `default.py`, make sure you modify the `api_key` and the `system_prompt` properly.
 
